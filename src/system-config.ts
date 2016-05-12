@@ -1,13 +1,35 @@
 /***********************************************************************************************
  * User Configuration.
  **********************************************************************************************/
-/** Map relative paths to URLs. */
+// Map relative paths to URLs.
 const map: any = {
+    '@angular2-material': 'vendor/@angular2-material'  
 };
 
-/** User packages configuration. */
-const packages: any = {
-};
+const materialPackages:string[] = [
+  'core',
+  'toolbar',
+  'icon',
+  'button',
+  'sidenav',
+  'list',
+  'card',
+  'input',
+  'radio',
+  'checkbox'
+];
+
+// User packages configuration. 
+const packages: any = createMaterialDesignConfig(materialPackages);
+
+
+function createMaterialDesignConfig(materialDesignPackages){
+    return materialDesignPackages.reduce((previousValue, currentValue) =>{
+    var key = `@angular2-material/${currentValue}`;
+    previousValue[key] = `vendor/@angular2-material/${currentValue}/${currentValue}`;
+    return previousValue;
+  },{});
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
@@ -29,6 +51,7 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/+dashboard',
   /** @cli-barrel */
 ];
 
