@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MdButton} from '@angular2-material/button/button';
 import {MdCheckbox} from '@angular2-material/checkbox/checkbox';
-import {MdCard} from '@angular2-material/card/card';
 import {MdToolbar} from '@angular2-material/toolbar/toolbar';
+import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav/sidenav';
+import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
+import {MD_CARD_DIRECTIVES} from '@angular2-material/card/card';
+import {MdIcon, MdIconRegistry} from '@angular2-material/icon/icon';
 
 
 @Component({
@@ -10,7 +13,15 @@ import {MdToolbar} from '@angular2-material/toolbar/toolbar';
   selector: 'app-dashboard',
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css'],
-  directives:[MdButton, MdCheckbox, MdCard, MdToolbar]
+  directives: [
+    MdButton,
+    MdCheckbox,
+    MdToolbar,
+    MdIcon,
+    MD_SIDENAV_DIRECTIVES,
+    MD_CARD_DIRECTIVES,
+    MD_LIST_DIRECTIVES],
+    providers:[MdIconRegistry]
 })
 export class DashboardComponent implements OnInit {
 
@@ -27,15 +38,15 @@ export class DashboardComponent implements OnInit {
     }
   ];
   dogs: Object[] = [
-    {name: "Porter"},
-    {name: "Mal"},
-    {name: "Razzle"},
-    {name: "Koby"},
-    {name: "Molly"},
-    {name: "Husi"}
+    { name: "Porter" },
+    { name: "Mal" },
+    { name: "Razzle" },
+    { name: "Koby" },
+    { name: "Molly" },
+    { name: "Husi" }
   ];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
   }
