@@ -2,13 +2,28 @@
   dashboard works!
 </p>
 
- <md-checkbox> I have read and agree to the terms of service.</md-checkbox>
+<md-checkbox> I have read and agree to the terms of service.</md-checkbox>
 <md-toolbar color="primary">
-    <button md-icon-button (click)="sidenav.open()">
-      <md-icon>menu</md-icon>
-    </button>
-    Puppy Love
-    <button md-fab (click)="formShowing=!formShowing">
-      <md-icon>add</md-icon>
-    </button>
-  </md-toolbar>
+  <button md-icon-button (click)="sidenav.open()">
+    <md-icon>menu</md-icon>
+  </button>
+  Puppy Love
+  <button md-fab (click)="formShowing=!formShowing">
+    <md-icon>add</md-icon>
+  </button>
+</md-toolbar>
+
+<div class="card-container">
+  <md-card *ngFor="let dog of dogs">
+    <img md-card-image [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
+    <md-card-title>{{dog.name}}</md-card-title>
+    <md-card-content class="secondary">
+      Very ipsum such dolor amet wow very divs very content concern, very much develop much spans
+      much layer so so scare such spans such padding many beta very layer much excuse.
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-button color="primary">SNIFF</button>
+      <button md-button color="primary">WOOF</button>
+    </md-card-actions>
+  </md-card>
+</div>

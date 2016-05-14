@@ -1,0 +1,48 @@
+@card-padding: 1rem;
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    padding: 1.5rem 2rem;
+}
+
+md-card {
+    width: 20rem;
+    margin: 1rem 0.5rem;
+    padding: 1rem
+}
+
+md-card-title{
+  font-size: 1.6rem;
+  font-weight: #333;
+}
+md-card-title:not(:first-child),
+md-card-subtitle:not(:first-child) {
+    margin-top: 1rem;
+}
+
+md-card-content{
+  font-size: 1.2rem;
+}
+
+[md-card-image]:first-child {
+    margin-top: -1.5rem;
+}
+
+[md-card-image] {
+    width: calc(100% ~'+' 2rem);
+    margin: 0 0 0 -1rem;
+}
+
+md-card-actions {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 8px 0;
+}
+
+.md-card > md-card-actions:last-child {
+    margin-bottom: -1rem;
+    padding-bottom: 0;
+}
